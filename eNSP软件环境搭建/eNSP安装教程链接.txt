@@ -1,0 +1,5 @@
+华为 eNSP 安装教程（含安装包，在文章后面）
+https://blog.csdn.net/weixin_51179078/article/details/132583441
+
+
+安装全程只需参考这一个教程
