@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="533B1B66-0B89-4285-A32D-B8A50227E38A" name="PC2" poe="0" model="PC" settings=" -simpc_ip 192.168.2.1  -simpc_mask 255.255.255.0  -simpc_gateway 192.168.2.254  -simpc_mac 54-89-98-B8-7E-7D  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0  -simpc_igmp_version 1  -simpc_group_ip_start 0.0.0.0  -simpc_src_ip_start 0.0.0.0  -simpc_group_num 0  -simpc_group_step 0  -simpc_src_num 0  -simpc_src_step 0  -simpc_type MODE_IS_INCLUDE " system_mac="54-89-98-B8-7E-7D" com_port="0" bootmode="0" cx="126.000000" cy="307.000000" edit_left="153" edit_top="361">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="D4959E57-4923-40ff-977C-F7B1F4D5C66D" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-C1-6B-08" com_port="2000" bootmode="0" cx="525.000000" cy="212.000000" edit_left="552" edit_top="266">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="7DF92222-6D0E-4889-9A8A-9031A49350E8" name="Server1" poe="0" model="Server" settings="-domain 0 -eth 548998BB75AC -ipaddr 10.1.1.1 -ipmask 255.255.255.0 -gateway 10.1.1.254 -ipv6addr 2000::2 -ipv6gateway 2000::1 -prefixlen 64 -ipv4dns 0.0.0.0 -ipv6dns 3000::1 -dnslist NULL" system_mac="54-89-98-C9-52-B8" com_port="0" bootmode="0" cx="734.000000" cy="214.000000" edit_left="761" edit_top="268">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="1A11CB43-D9B1-48ce-8396-F84EA77D2BC8" name="PC1" poe="0" model="PC" settings=" -simpc_ip 192.168.1.1  -simpc_mask 255.255.255.0  -simpc_gateway 192.168.1.254  -simpc_mac 54-89-98-D3-44-AE  -simpc_mc_dstip 0.0.0.0  -simpc_mc_dstmac 00-00-00-00-00-00  -simpc_dns1 0.0.0.0  -simpc_dns2 0.0.0.0  -simpc_ipv6 ::  -simpc_prefix 128  -simpc_gatewayv6 ::  -simpc_dhcp_state 0  -simpc_dhcpv6_state 0  -simpc_dns_auto_state 0  -simpc_igmp_version 1  -simpc_group_ip_start 0.0.0.0  -simpc_src_ip_start 0.0.0.0  -simpc_group_num 0  -simpc_group_step 0  -simpc_src_num 0  -simpc_src_step 0  -simpc_type MODE_IS_INCLUDE " system_mac="54-89-98-D3-44-AE" com_port="0" bootmode="0" cx="124.000000" cy="88.000000" edit_left="151" edit_top="142">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="1" />
+            </slot>
+        </dev>
+        <dev id="C7B98481-AB21-462d-A63C-77BC5493D55B" name="LSW1" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-60-28-76" com_port="2001" bootmode="0" cx="312.000000" cy="210.000000" edit_left="339" edit_top="264">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="1A11CB43-D9B1-48ce-8396-F84EA77D2BC8" destDeviceID="C7B98481-AB21-462d-A63C-77BC5493D55B">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="187.224747" srcBoundRect_Y="138.507553" srcOffset_X="12.000000" srcOffset_Y="-2.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="302.775238" tarBoundRect_Y="213.492447" tarOffset_X="-25.000000" tarOffset_Y="-20.000000" />
+        </line>
+        <line srcDeviceID="533B1B66-0B89-4285-A32D-B8A50227E38A" destDeviceID="C7B98481-AB21-462d-A63C-77BC5493D55B">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="191.289749" srcBoundRect_Y="314.031708" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="300.710266" tarBoundRect_Y="256.968292" tarOffset_X="-58.000000" tarOffset_Y="-1.000000" />
+        </line>
+        <line srcDeviceID="C7B98481-AB21-462d-A63C-77BC5493D55B" destDeviceID="D4959E57-4923-40ff-977C-F7B1F4D5C66D">
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="1" srcBoundRect_X="382.181854" srcBoundRect_Y="237.405457" srcOffset_X="-14.000000" srcOffset_Y="5.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="508.818146" tarBoundRect_Y="238.594543" tarOffset_X="-24.000000" tarOffset_Y="7.000000" />
+        </line>
+        <line srcDeviceID="D4959E57-4923-40ff-977C-F7B1F4D5C66D" destDeviceID="7DF92222-6D0E-4889-9A8A-9031A49350E8">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="595.181763" srcBoundRect_Y="239.413223" srcOffset_X="-9.000000" srcOffset_Y="10.000000" tarIndex="0" tarBoundRectIsMoved="0" tarBoundRect_X="717.818237" tarBoundRect_Y="240.586777" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="394" top="188" right="504" bottom="220" content="VLAN 30&#x0D;&#x0A;192.168.3.0/24" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="481" top="497" right="772" bottom="857" content="sys&#x0D;&#x0A;sys R1&#x0D;&#x0A;undo info en&#x0D;&#x0A;&#x0D;&#x0A;int g0/0/0&#x0D;&#x0A;ip add 192.168.3.2 24&#x0D;&#x0A;int g0/0/1&#x0D;&#x0A;ip add 10.1.1.254 24&#x0D;&#x0A;q&#x0D;&#x0A;&#x0D;&#x0A;ip route-static 0.0.0.0 0 192.168.3.1&#x0D;&#x0A;&#x0D;&#x0A;dis ip int b&#x0D;&#x0A;dis ip rou&#x0D;&#x0A;&#x0D;&#x0A;acl 2000&#x0D;&#x0A;rule deny source 192.168.1.0 0.0.0.255&#x0D;&#x0A;rule permit source any&#x0D;&#x0A;dis this&#x0D;&#x0A;q&#x0D;&#x0A;&#x0D;&#x0A;int g0/0/0&#x0D;&#x0A;traffic-filter inbound acl 2000" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="149" top="496" right="432" bottom="950" content="sys&#x0D;&#x0A;sys SW1&#x0D;&#x0A;undo info en&#x0D;&#x0A;&#x0D;&#x0A;vlan ba 10 20 30&#x0D;&#x0A;int g0/0/1&#x0D;&#x0A;p l a&#x0D;&#x0A;p d v 10&#x0D;&#x0A;int g0/0/2&#x0D;&#x0A;p l a&#x0D;&#x0A;p d v 20&#x0D;&#x0A;int g0/0/3&#x0D;&#x0A;p l a&#x0D;&#x0A;p d v 30&#x0D;&#x0A;q&#x0D;&#x0A;dis port vlan&#x0D;&#x0A;&#x0D;&#x0A;int vlanif 10&#x0D;&#x0A;ip add 192.168.1.254 24&#x0D;&#x0A;int vlanif 20&#x0D;&#x0A;ip add 192.168.2.254 24&#x0D;&#x0A;int vlanif 30&#x0D;&#x0A;ip add 192.168.3.1 24&#x0D;&#x0A;q&#x0D;&#x0A;&#x0D;&#x0A;ip route-static 0.0.0.0 0 192.168.3.2&#x0D;&#x0A;&#x0D;&#x0A;dis ip int b&#x0D;&#x0A;dis ip rou" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="79" top="45" right="226" bottom="93" content="VLAN 10&#x0D;&#x0A;地址:192.168.1.1/24&#x0D;&#x0A;网关:192.168.1.254" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="83" top="387" right="230" bottom="435" content="VLAN 20&#x0D;&#x0A;地址:192.168.2.1/24&#x0D;&#x0A;网关:192.168.2.254" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="367" top="217" right="394" bottom="234" content="3.1" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="497" top="220" right="524" bottom="237" content="3.2" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="407" top="95" right="487" bottom="119" content="基础ACL" fontname="Consolas" fontstyle="0" editsize="140" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="716" top="298" right="841" bottom="330" content="地址:10.1.1.1/24&#x0D;&#x0A;网关:10.1.1.254" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="584" top="219" right="626" bottom="236" content="1.254" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>

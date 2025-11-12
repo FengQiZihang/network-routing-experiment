@@ -1,0 +1,119 @@
+配置任务1：建立单区域OSPF
+配置任务2：通过开销进行选路
+配置任务3：通过OSPF发布默认路由
+配置任务4：配置OSPF认证
+
+# 路由器和PC IP配置（路由器命令方式配置，PC手动配置静态）
+-- R1 --
+sys
+sys R1
+int g0/0/0
+ip add 172.16.10.1 24
+int g0/0/1
+ip add 10.10.14.1 24
+int g0/0/2
+ip add 10.10.12.1 24
+int lo 0
+ip add 10.10.0.1 32
+q
+dis ip int b
+
+-- R3 --
+sys
+sys R3
+int g0/0/0
+ip add 172.16.30.3 24
+int g0/0/1
+ip add 10.10.34.3 24
+int g0/0/2
+ip add 10.10.23.3 24
+int lo 0
+ip add 10.10.0.3 32
+q
+dis ip int b
+
+-- R2 --
+sys
+sys R2
+int g0/0/0
+ip add 10.10.12.2 24
+int g0/0/1
+ip add 10.10.23.2 24
+int lo 0
+ip add 10.10.0.2 32
+q
+dis ip int b
+
+-- R4 --
+sys
+sys R4
+int g0/0/0
+ip add 10.10.14.4 24
+int g0/0/1
+ip add 10.10.34.4 24
+int lo 0
+ip add 10.10.0.4 32
+q
+dis ip int b
+
+-- PC1 --
+IP地址：172.16.10.10
+掩码：255.255.255.0
+网关：172.16.10.1
+
+-- PC2 --
+IP地址：172.16.30.10
+掩码：255.255.255.0
+网关：172.16.30.3
+
+# 路由器OSPF配置
+-- R1 --
+ospf 1 ro 1.1.1.1
+a 0
+network 172.16.10.0 0.0.0.255
+network 10.10.14.0 0.0.0.255
+network 10.10.12.0 0.0.0.255
+network 10.10.0.1 0.0.0.0
+
+-- R2 --
+ospf 1 ro 2.2.2.2
+a 0
+network 10.10.12.0 0.0.0.255
+network 10.10.23.0 0.0.0.255
+network 10.10.0.2 0.0.0.0
+
+-- R3 --
+ospf 3 ro 3.3.3.3
+a 0
+network 172.16.30.0 0.0.0.255
+network 10.10.34.0 0.0.0.255
+network 10.10.23.0 0.0.0.255
+network 10.10.0.3 0.0.0.0
+
+中间会看到Full建立过程
+分别在R1 R2 R3上执行：
+display ip routing-table protocol ospf
+dis ospf peer b
+然后
+PC1：ping 172.16.30.10 # 此时应该可以ping通
+
+-- R4 --
+ospf 1 ro 4.4.4.4
+a 0
+network 10.10.14.0 0.0.0.255
+network 10.10.34.0 0.0.0.255
+network 10.10.0.4 0.0.0.0
+
+
+dis ip int b # 查看接口ip配置
+dis ip router -替换为下面这句	
+display ip routing-table protocol ospf
+dis ospf int g0/0/0
+dis th
+dis ospf peer b
+
+
+# 通过开销进行选路
+更改AR1 G0/0/1接口的OSPF开销
+int g0/0/1
+ospf cost 5

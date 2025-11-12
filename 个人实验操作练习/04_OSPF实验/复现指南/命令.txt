@@ -1,0 +1,73 @@
+基本说明
+从左到右四个网段：
+1.1.1.1/32、10.0.12.0/24（G线）、10.1.12.0/24（S线）、2.2.2.2/32
+
+各个端口IP配置：
+R1：g0/0/0 10.0.12.1、s1/0/0 10.1.12.1
+R2：g0/0/0 10.0.12.2、s1/0/0 10.1.12.2
+
+展示网络拓扑图截图
+
+----
+R1:
+sys
+undo in en
+sys R1
+  
+int g0/0/0
+ip add 10.0.12.1 24
+int s1/0/0
+ip add 10.1.12.1 24
+int lo 0
+ip add 1.1.1.1 32
+
+R2
+sys
+undo in en
+sys R2
+
+int g0/0/0
+ip add 10.0.12.2 24
+int s1/0/0
+ip add 10.1.12.2 24
+int lo 0
+ip add 2.2.2.2 32
+----
+
+此时对R1的g0/0/0开启抓包
+
+----
+R1:
+ospf 1 router-id 11.11.11.11
+a 0
+network 10.0.12.1 0.0.0.0
+network 10.1.12.1 0.0.0.0
+network 1.1.1.1 0.0.0.0
+
+R2:
+ospf 1 router-id 22.22.22.22
+a 0
+network 10.0.12.2 0.0.0.0
+network 10.1.12.2 0.0.0.0
+network 2.2.2.2 0.0.0.0
+----
+展示非-Hello 的 OSPF 报文（DD/LSR/LSU/LSAck）抓包截图
+
+----
+dis ip router
+dis ospf peer brief
+dis ospf lsdb
+三张dis分别展示截图
+
+----
+ping -a 1.1.1.1 2.2.2.2
+
+----
+save
+
+
+注：OSPF router-id 进行二次配置会有如下提示
+The configuration succeeded. You need to restart the OSPF process to validate the new router ID，退回<用户视图>执行下面：
+reset ospf process
+
+

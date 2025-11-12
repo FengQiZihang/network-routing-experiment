@@ -1,0 +1,104 @@
+
+-------------------------------------
+sys
+sys SW1
+undo info en
+
+vlan ba 10 20
+
+int e0/0/1
+p l a
+p d v 10
+int e0/0/2
+p l a
+p d v 10
+
+int e0/0/3
+p l a
+p d v 20
+int e0/0/4
+p l a
+p d v 20
+
+int e0/0/5
+p l t
+p t a v 10 20
+
+q
+dis port vlan
+
+
+-----------------------------------
+
+sys
+sys SW2
+undo info en
+
+vlan ba 10 20 30
+
+int g0/0/1
+p l t
+p t a v 10 20
+int g0/0/2
+p l a
+p d v 30
+q
+
+int vlanif10
+ip add 192.168.10.254 24
+int vlanif20
+ip add 192.168.20.254 24
+int vlanif30
+ip add 192.168.30.2 24
+q
+
+ip route-static 0.0.0.0 0 192.168.30.1
+
+dis ip int b
+dis ip rou
+
+
+---------------------------------
+sys
+sys R1
+undo info en
+
+int g0/0/0
+ip add 192.168.30.1 24
+int g0/0/1
+ip add 2.3.4.254 24
+q
+
+ip route-static 192.168.10.0 255.255.255.0 192.168.30.2
+ip route-static 192.168.20.0 255.255.255.0 192.168.30.2
+
+dis ip int bri
+dis ip rout
+
+
+-----------------------------------
+
+此时PC1 分别ping PC2、PC3、Server，可以ping通
+
+-----------------------------------
+
+
+附：可以清理ARP缓存，进行抓包。
+PC执行：
+arp -a
+arp -d *
+
+SW2 和 R1 都在<用户视图>下执行：
+display arp
+reset arp dynamic
+display arp
+
+附：关闭生成树协议命令
+undo stp enable
+
+
+
+
+
+ 
+

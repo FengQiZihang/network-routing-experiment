@@ -1,0 +1,90 @@
+框架结构参照 之前VLAN间通信实验文档
+
+
+实验拓扑我自己挂截图
+简要说明一下地址分配
+
+具体实验步骤
+SW1:
+sys
+sys SW1
+undo info en
+
+vlan ba 10 20 30
+int g0/0/1
+p l a
+p d v 10
+int g0/0/2
+p l a
+p d v 20
+int g0/0/3
+p l a
+p d v 30
+q
+dis port vlan
+
+int vlanif 10
+ip add 192.168.1.254 24
+int vlanif 20
+ip add 192.168.2.254 24
+int vlanif 30
+ip add 192.168.3.1 24
+q
+
+ip route-static 0.0.0.0 0 192.168.3.2
+
+dis ip int b
+dis ip rou
+
+R1:
+sys
+sys R1
+undo info en
+
+int g0/0/0
+ip add 192.168.3.2 24
+int g0/0/1
+ip add 10.1.1.254 24
+q
+
+ip route-static 0.0.0.0 0 192.168.3.1
+# 静态路由等价写法
+ip route-static 192.168.1.0 24 192.168.3.1
+ip route-static 192.168.2.0 24 192.168.3.1
+
+dis ip int b
+dis ip rou
+
+
+此时全网互通，可在PC1上分别ping
+192.168.2.1
+10.1.1.1
+结果PC2，Server均可达
+
+
+
+
+
+R1:
+# 创建基本ACL，禁止192.168.1.0/24网段访问服务器网络：
+acl 2000
+rule deny source 192.168.1.0 0.0.0.255
+rule permit source any
+dis this
+q
+
+# 两个流量过滤取其一
+int g0/0/0
+traffic-filter inbound acl 2000
+int g0/0/1
+traffic-filter outbound acl 2000
+
+
+然后再次
+在PC1上分别ping
+192.168.2.1
+10.1.1.1
+结果PC2可达，Server不可达
+
+
+

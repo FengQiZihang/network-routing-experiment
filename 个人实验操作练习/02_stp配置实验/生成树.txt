@@ -1,0 +1,34 @@
+sys
+undo info en
+sys S4
+stp mode stp
+
+dis stp brief
+可查看——3个桥的ID
+
+/----------------------------------------
+# 更改桥ID的优先级
+stp priority _num__
+
+# 修改开销标准
+stp pathcost-standard dot1d
+# 修改接口开销（先进入接口视图）
+stp cost __num__
+# 修改接口优先级（先进入接口视图）
+stp port priority <0,240-16>
+
+/---------------------------------------
+DESI——指定接口
+ALTE——阻塞
+ROOT——根接口
+
+# BPDU比较原则
+最小的根桥ID（root bid）
+最小的RPC（rpc）
+最小的网桥ID（bid）
+最小的接口ID（PID）
+
+STP接口状态
+禁用、阻塞、侦听、学习、转发
+
+

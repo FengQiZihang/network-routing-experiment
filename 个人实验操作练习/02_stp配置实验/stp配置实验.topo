@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="D27D5917-4FE1-4dea-A08F-5252C2E25875" name="LSW2" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-D8-5F-B8" com_port="2001" bootmode="0" cx="610.000000" cy="149.000000" edit_left="637" edit_top="203">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="83B573CC-26EA-4f42-9FFC-A6E1CE2BC872" name="LSW3" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-4C-3B-B3" com_port="2002" bootmode="0" cx="424.000000" cy="289.000000" edit_left="451" edit_top="343">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="CCC83143-F901-42ed-B2A7-B6843B8418B8" name="LSW4" poe="0" model="S5700" settings="" system_mac="4C-1F-CC-96-0B-C0" com_port="2003" bootmode="0" cx="424.000000" cy="445.000000" edit_left="451" edit_top="499">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="24" />
+            </slot>
+        </dev>
+        <dev id="3D050133-6AA6-4eac-9D1F-1A06468A2B66" name="LSW1" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-59-7A-E9" com_port="2000" bootmode="0" cx="241.000000" cy="149.000000" edit_left="268" edit_top="203">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="3D050133-6AA6-4eac-9D1F-1A06468A2B66" destDeviceID="D27D5917-4FE1-4dea-A08F-5252C2E25875">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="311.183777" srcBoundRect_Y="176.000000" srcOffset_X="-16.000000" srcOffset_Y="-28.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="593.816223" tarBoundRect_Y="176.000000" tarOffset_X="-54.000000" tarOffset_Y="-31.000000" />
+        </line>
+        <line srcDeviceID="3D050133-6AA6-4eac-9D1F-1A06468A2B66" destDeviceID="83B573CC-26EA-4f42-9FFC-A6E1CE2BC872">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="302.298035" srcBoundRect_Y="202.238937" srcOffset_X="-40.000000" srcOffset_Y="23.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="416.701965" tarBoundRect_Y="289.761047" tarOffset_X="-36.000000" tarOffset_Y="-2.000000" />
+        </line>
+        <line srcDeviceID="D27D5917-4FE1-4dea-A08F-5252C2E25875" destDeviceID="83B573CC-26EA-4f42-9FFC-A6E1CE2BC872">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="602.497559" srcBoundRect_Y="201.969574" srcOffset_X="-33.000000" srcOffset_Y="16.000000" tarIndex="1" tarBoundRectIsMoved="0" tarBoundRect_X="485.502441" tarBoundRect_Y="290.030426" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="83B573CC-26EA-4f42-9FFC-A6E1CE2BC872" destDeviceID="CCC83143-F901-42ed-B2A7-B6843B8418B8">
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="1" srcBoundRect_X="451.000000" srcBoundRect_Y="359.183777" srcOffset_X="-55.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="451.000000" tarBoundRect_Y="428.816223" tarOffset_X="-73.000000" tarOffset_Y="4.000000" />
+            <interfacePair lineName="Copper" srcIndex="3" srcBoundRectIsMoved="1" srcBoundRect_X="463.000000" srcBoundRect_Y="371.183777" srcOffset_X="10.000000" srcOffset_Y="-17.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="463.000000" tarBoundRect_Y="440.816223" tarOffset_X="4.000000" tarOffset_Y="0.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips />
+</topo>
