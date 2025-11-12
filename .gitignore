@@ -1,0 +1,27 @@
+# 排除教学资源目录（版权考虑）
+04+数据通信与网络技术-电子教材/
+07 数据通信与网络技术实验手册-学生版/
+HCIA-Datacom网络技术实验手册-PPT/
+培训机构资料/
+授课PPT/
+
+# 排除临时文件和系统文件
+*.tmp
+*.temp
+*.log
+.DS_Store
+Thumbs.db
+
+# 排除eNSP运行时生成的文件（可选）
+*.log
+*.tmp
+
+# 常见IDE和编辑器文件
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# 备份文件
+*.bak
+*.backup
