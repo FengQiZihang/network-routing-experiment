@@ -50,6 +50,6 @@
     <shapes />
     <txttips>
         <txttip left="213" top="50" right="367" bottom="74" content="生成树基础实验" fontname="Consolas" fontstyle="0" editsize="140" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
-        <txttip left="567" top="76" right="692" bottom="389" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys SW1&#x0D;&#x0A;&#x0D;&#x0A;stp en&#x0D;&#x0A;stp mode stp&#x0D;&#x0A;dis stp&#x0D;&#x0A;dis stp brief&#x0D;&#x0A;&#x0D;&#x0A;#SW1&#x0D;&#x0A;stp root prim&#x0D;&#x0A;#SW2&#x0D;&#x0A;stp root sec&#x0D;&#x0A;&#x0D;&#x0A;#SW4&#x0D;&#x0A;int e0/0/1&#x0D;&#x0A;stp cost 500000&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;stp mode rstp" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="567" top="76" right="684" bottom="389" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys SW1&#x0D;&#x0A;&#x0D;&#x0A;stp en&#x0D;&#x0A;stp mode stp&#x0D;&#x0A;dis stp&#x0D;&#x0A;dis stp brief&#x0D;&#x0A;&#x0D;&#x0A;#SW1&#x0D;&#x0A;stp root prim&#x0D;&#x0A;#SW2&#x0D;&#x0A;stp root sec&#x0D;&#x0A;&#x0D;&#x0A;#SW4&#x0D;&#x0A;int e0/0/1&#x0D;&#x0A;stp cost 500000&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;stp mode rstp" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
     </txttips>
 </topo>

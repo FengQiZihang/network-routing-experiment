@@ -1,0 +1,51 @@
+/----- R2配置(R3类似),模拟主机主机,使用静态路由配置网关 -----/
+int g0/0/1
+ip add 192.168.2.1 255.255.255.0
+q
+ip route-static 0.0.0.0 0.0.0.0 192.168.2.254
+
+/----- SW1配置 -----/
+sys
+undo info en
+sys SW1
+vlan batch 2 3
+int e0/0/2
+p l a
+p d v 2
+int e0/0/3
+p l a
+p d v 3
+int g0/0/1
+p l t
+p t a v 2 3
+-----
+int g0/0/1
+undo p t a v 2 3
+undo p l t
+q
+int vlanif 2
+ip add 192.168.2.254 255.255.255.0
+q
+int vlanif 3
+ip add 192.168.3.254 255.255.255.0
+q
+-----
+
+/----- R1配置 -----/
+sys
+undo info en
+sys R1
+int g0/0/1.2
+dot1q termination vid 2
+ip add 192.168.2.254 24
+arp broadcast enable
+q
+int g0/0/1.3
+dot1q termination vid 3
+ip add 192.168.3.254 24
+arp broadcast enable
+q
+-----
+undo int g0/0/1.2
+undo int g0/0/1.3
+-----
