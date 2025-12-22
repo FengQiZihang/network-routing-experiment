@@ -1,0 +1,31 @@
+参照生成树基础.pdf示例拓扑进行搭建，交换机选择S3700类型，使用copper线缆连接
+
+步骤一：展示生成树状态，结论：
+SW4 是根桥
+SW1：阻塞了 3 个 ALTE（E0/0/10、11、13）
+SW2：阻塞了 1 个 ALTE（E0/0/13）
+其余端口全部在转发
+真实的拓扑状态如图：
+
+[SW1]display stp brief
+ MSTID  Port                        Role  STP State     Protection
+   0    Ethernet0/0/10              ALTE  DISCARDING      NONE
+   0    Ethernet0/0/11              ALTE  DISCARDING      NONE
+   0    Ethernet0/0/13              ALTE  DISCARDING      NONE
+   0    Ethernet0/0/14              ROOT  FORWARDING      NONE
+[SW2]display stp brief
+ MSTID  Port                        Role  STP State     Protection
+   0    Ethernet0/0/10              DESI  FORWARDING      NONE
+   0    Ethernet0/0/11              DESI  FORWARDING      NONE
+   0    Ethernet0/0/13              ALTE  DISCARDING      NONE
+   0    Ethernet0/0/14              ROOT  FORWARDING      NONE
+[SW3]display stp brief
+ MSTID  Port                        Role  STP State     Protection
+   0    Ethernet0/0/1               DESI  FORWARDING      NONE
+   0    Ethernet0/0/2               DESI  FORWARDING      NONE
+   0    Ethernet0/0/3               ROOT  FORWARDING      NONE
+[SW4]display stp brief
+ MSTID  Port                        Role  STP State     Protection
+   0    Ethernet0/0/1               DESI  FORWARDING      NONE
+   0    Ethernet0/0/2               DESI  FORWARDING      NONE
+   0    Ethernet0/0/3               DESI  FORWARDING      NONE

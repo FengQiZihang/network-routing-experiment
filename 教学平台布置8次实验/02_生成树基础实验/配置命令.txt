@@ -1,0 +1,22 @@
+sys
+undo info en
+sys SW1
+
+stp en
+stp mode stp
+dis stp
+dis stp brief
+
+#SW1
+stp root prim
+#SW2
+stp root sec
+
+#SW4
+int e0/0/1
+stp cost 500000
+
+
+stp mode rstp
+
+

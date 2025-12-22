@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="F7B3CB7C-1410-4a5f-BAD9-E7FB1CE669E6" name="LSW2" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-4A-47-5D" com_port="2001" bootmode="0" cx="462.067444" cy="105.410065" edit_left="489" edit_top="159">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="103709CB-C2A6-4d78-A111-4B9A0DE6203C" name="LSW4" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-18-1B-40" com_port="2003" bootmode="0" cx="386.815125" cy="310.846436" edit_left="413" edit_top="364">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="0081DBBB-A603-4f02-97D2-78216327570C" name="LSW1" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-8B-71-13" com_port="2000" bootmode="0" cx="69.371674" cy="106.968704" edit_left="96" edit_top="160">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="4FF85A24-F486-4716-BB7D-E260D5D91DE3" name="LSW3" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-33-61-71" com_port="2002" bootmode="0" cx="139.012756" cy="310.918213" edit_left="166" edit_top="364">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="4FF85A24-F486-4716-BB7D-E260D5D91DE3" destDeviceID="0081DBBB-A603-4f02-97D2-78216327570C">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="151.984222" srcBoundRect_Y="296.153992" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="12" tarBoundRectIsMoved="0" tarBoundRect_X="110.015785" tarBoundRect_Y="173.845993" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="4FF85A24-F486-4716-BB7D-E260D5D91DE3" destDeviceID="F7B3CB7C-1410-4a5f-BAD9-E7FB1CE669E6">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="0" srcBoundRect_X="202.460342" srcBoundRect_Y="313.859528" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="12" tarBoundRectIsMoved="1" tarBoundRect_X="452.539673" tarBoundRect_Y="155.140472" tarOffset_X="-83.000000" tarOffset_Y="-3.000000" />
+        </line>
+        <line srcDeviceID="4FF85A24-F486-4716-BB7D-E260D5D91DE3" destDeviceID="103709CB-C2A6-4d78-A111-4B9A0DE6203C">
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="0" srcBoundRect_X="209.183762" srcBoundRect_Y="337.000000" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="2" tarBoundRectIsMoved="1" tarBoundRect_X="369.816223" tarBoundRect_Y="337.000000" tarOffset_X="-27.000000" tarOffset_Y="5.000000" />
+        </line>
+        <line srcDeviceID="103709CB-C2A6-4d78-A111-4B9A0DE6203C" destDeviceID="0081DBBB-A603-4f02-97D2-78216327570C">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="376.685913" srcBoundRect_Y="313.630676" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="13" tarBoundRectIsMoved="0" tarBoundRect_X="132.314087" tarBoundRect_Y="156.369324" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="103709CB-C2A6-4d78-A111-4B9A0DE6203C" destDeviceID="F7B3CB7C-1410-4a5f-BAD9-E7FB1CE669E6">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="0" srcBoundRect_X="428.011200" srcBoundRect_Y="296.509247" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="13" tarBoundRectIsMoved="0" tarBoundRect_X="473.988800" tarBoundRect_Y="172.490753" tarOffset_X="0.000000" tarOffset_Y="0.000000" />
+        </line>
+        <line srcDeviceID="0081DBBB-A603-4f02-97D2-78216327570C" destDeviceID="F7B3CB7C-1410-4a5f-BAD9-E7FB1CE669E6">
+            <interfacePair lineName="Copper" srcIndex="9" srcBoundRectIsMoved="0" srcBoundRect_X="139.183624" srcBoundRect_Y="132.890121" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="9" tarBoundRectIsMoved="1" tarBoundRect_X="445.816376" tarBoundRect_Y="132.109879" tarOffset_X="-61.000000" tarOffset_Y="4.000000" />
+            <interfacePair lineName="Copper" srcIndex="10" srcBoundRectIsMoved="1" srcBoundRect_X="151.183624" srcBoundRect_Y="144.890121" srcOffset_X="-20.000000" srcOffset_Y="-30.000000" tarIndex="10" tarBoundRectIsMoved="1" tarBoundRect_X="457.816376" tarBoundRect_Y="144.109879" tarOffset_X="-72.000000" tarOffset_Y="-30.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="213" top="50" right="367" bottom="74" content="生成树基础实验" fontname="Consolas" fontstyle="0" editsize="140" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="567" top="76" right="692" bottom="389" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys SW1&#x0D;&#x0A;&#x0D;&#x0A;stp en&#x0D;&#x0A;stp mode stp&#x0D;&#x0A;dis stp&#x0D;&#x0A;dis stp brief&#x0D;&#x0A;&#x0D;&#x0A;#SW1&#x0D;&#x0A;stp root prim&#x0D;&#x0A;#SW2&#x0D;&#x0A;stp root sec&#x0D;&#x0A;&#x0D;&#x0A;#SW4&#x0D;&#x0A;int e0/0/1&#x0D;&#x0A;stp cost 500000&#x0D;&#x0A;&#x0D;&#x0A;&#x0D;&#x0A;stp mode rstp" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>

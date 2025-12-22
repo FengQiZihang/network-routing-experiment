@@ -1,0 +1,27 @@
+/---- 生成树接口状态 ----/
+Disable-禁用
+Blocking-阻塞
+Listening-监听
+Learning-学习
+Forwarding-转发
+
+/---- 生成树角色 ----/
+ROOT-根端口
+DESI-指定端口
+ALTE-备用端口
+
+/---- 基本配置命令 ----/
+stp enable -- 开启生成树
+stp mode stp -- 设置生成树模式为STP
+stp mode rstp -- 设置生成树模式为RSTP
+stp mode mstp -- 设置生成树模式为MSTP
+
+stp root primary -- 设置根桥
+stp root secondary -- 设置备份根桥
+
+stp priority 32768 -- 设置交换机优先级,默认为32768
+
+int e0/0/1 -- 进入接口
+stp cost 500000 -- 设置接口开销
+stp priority 128 -- 设置接口优先级,默认为128
+
