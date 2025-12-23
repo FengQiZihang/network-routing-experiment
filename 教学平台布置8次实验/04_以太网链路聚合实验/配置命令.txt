@@ -1,0 +1,39 @@
+sys
+undo info en
+sys SW1
+int eth-trunk 1
+mode manual load-balance
+trunkport eth 0/0/1 to 0/0/3
+q
+
+int eth-trunk 1
+undo trunkport eth 0/0/1 to 0/0/3
+mode lacp
+trunkport eth 0/0/1 to 0/0/3
+q
+
+lacp priority 1
+int e0/0/1
+lacp priority 1
+int e0/0/2
+lacp priority 1
+q
+
+int eth-trunk 1
+max act 2
+least act 2
+lacp preempt en
+q
+
+dis eth-trunk 1
+int e0/0/1
+shutdown
+q
+dis eth-trunk 1
+int e0/0/2
+shutdown
+q
+dis eth-trunk 1
+
+开启所有接口
+dis eth-trunk 1

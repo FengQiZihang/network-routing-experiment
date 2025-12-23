@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="UNICODE" ?>
 <topo version="1.3.00.100">
     <devices>
-        <dev id="E603D7BE-6AEC-4194-9D6D-9CE137A4D0B5" name="AR3" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-2B-63-CF" com_port="2002" bootmode="0" cx="283.380157" cy="369.710724" edit_left="310" edit_top="423">
-            <slot number="slot17" isMainBoard="1">
-                <interface sztype="Ethernet" interfacename="GE" count="1" />
-                <interface sztype="Ethernet" interfacename="GE" count="2" />
-            </slot>
-        </dev>
         <dev id="BEE364D5-233F-40db-A278-24C31C7A676F" name="LSW1" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-94-79-2D" com_port="2003" bootmode="0" cx="175.206604" cy="241.322311" edit_left="202" edit_top="295">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
                 <interface sztype="Ethernet" interfacename="GE" count="2" />
             </slot>
         </dev>
-        <dev id="86020714-6635-4be3-9292-89CC91AB64F3" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-0A-48-04" com_port="2000" bootmode="0" cx="175.000000" cy="121.000000" edit_left="202" edit_top="175">
+        <dev id="E603D7BE-6AEC-4194-9D6D-9CE137A4D0B5" name="AR3" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-2B-63-CF" com_port="2002" bootmode="0" cx="283.380157" cy="369.710724" edit_left="310" edit_top="423">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="GE" count="1" />
                 <interface sztype="Ethernet" interfacename="GE" count="2" />
             </slot>
         </dev>
         <dev id="D62E91F7-0B90-42ac-876D-9550743E8753" name="AR2" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-E7-52-4C" com_port="2001" bootmode="0" cx="65.942146" cy="367.785126" edit_left="92" edit_top="421">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="86020714-6635-4be3-9292-89CC91AB64F3" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-0A-48-04" com_port="2000" bootmode="0" cx="175.000000" cy="121.000000" edit_left="202" edit_top="175">
             <slot number="slot17" isMainBoard="1">
                 <interface sztype="Ethernet" interfacename="GE" count="1" />
                 <interface sztype="Ethernet" interfacename="GE" count="2" />
@@ -43,8 +43,9 @@
         <txttip left="131" top="388" right="271" bottom="405" content="R2和R3模拟终端用户" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
         <txttip left="38" top="447" right="178" bottom="479" content="IP:192.168.2.1/24&#x0D;&#x0A;网关:192.168.2.254" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
         <txttip left="250" top="447" right="390" bottom="479" content="IP:192.168.3.1/24&#x0D;&#x0A;网关:192.168.3.254" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
-        <txttip left="427" top="33" right="537" bottom="253" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys SW1&#x0D;&#x0A;vlan batch 2 3&#x0D;&#x0A;int e0/0/2&#x0D;&#x0A;p l a&#x0D;&#x0A;p d v 2&#x0D;&#x0A;int e0/0/3&#x0D;&#x0A;p l a&#x0D;&#x0A;p d v 3&#x0D;&#x0A;int e0/0/1&#x0D;&#x0A;p l t&#x0D;&#x0A;p t a v 2 3&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
-        <txttip left="427" top="257" right="846" bottom="508" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys R2&#x0D;&#x0A;int g0/0/1&#x0D;&#x0A;ip add 192.168.2.1 255.255.255.0&#x0D;&#x0A;q&#x0D;&#x0A;ip route-static 192.168.2.0 255.255.255.0 192.168.2.254&#x0D;&#x0A;&#x0D;&#x0A;sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys R3&#x0D;&#x0A;int g0/0/1&#x0D;&#x0A;ip add 192.168.3.1 255.255.255.0&#x0D;&#x0A;q&#x0D;&#x0A;ip route-static 192.168.3.0 255.255.255.0 192.168.3.254&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
-        <txttip left="541" top="49" right="719" bottom="253" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys R1&#x0D;&#x0A;int e0/0/1.2&#x0D;&#x0A;dot1q termination vid 2&#x0D;&#x0A;ip add 192.168.2.254 24&#x0D;&#x0A;arp broadcast enable&#x0D;&#x0A;q&#x0D;&#x0A;int e0/0/1.3&#x0D;&#x0A;dot1q termination vid 3&#x0D;&#x0A;ip add 192.168.3.254 24&#x0D;&#x0A;arp broadcast enable&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="411" top="50" right="672" bottom="410" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys SW1&#x0D;&#x0A;vlan batch 2 3&#x0D;&#x0A;int e0/0/2&#x0D;&#x0A;p l a&#x0D;&#x0A;p d v 2&#x0D;&#x0A;int e0/0/3&#x0D;&#x0A;p l a&#x0D;&#x0A;p d v 3&#x0D;&#x0A;int e0/0/1&#x0D;&#x0A;p l t&#x0D;&#x0A;p t a v 2 3&#x0D;&#x0A;-------&#x0D;&#x0A;int e0/0/1&#x0D;&#x0A;undo p t a v 2 3&#x0D;&#x0A;undo p l t&#x0D;&#x0A;&#x0D;&#x0A;int vlanif 2&#x0D;&#x0A;ip add 192.168.2.254 255.255.255.0&#x0D;&#x0A;int vlanif 3&#x0D;&#x0A;ip add 192.168.3.254 255.255.255.0&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="430" top="453" right="774" bottom="704" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys R2&#x0D;&#x0A;int g0/0/1&#x0D;&#x0A;ip add 192.168.2.1 255.255.255.0&#x0D;&#x0A;q&#x0D;&#x0A;ip route-static 0.0.0.0 0.0.0.0 192.168.2.254&#x0D;&#x0A;&#x0D;&#x0A;sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys R3&#x0D;&#x0A;int g0/0/1&#x0D;&#x0A;ip add 192.168.3.1 255.255.255.0&#x0D;&#x0A;q&#x0D;&#x0A;ip route-static 0.0.0.0 0.0.0.0 192.168.3.254&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="717" top="131" right="895" bottom="398" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys R1&#x0D;&#x0A;int g0/0/1.2&#x0D;&#x0A;dot1q termination vid 2&#x0D;&#x0A;ip add 192.168.2.254 24&#x0D;&#x0A;arp broadcast enable&#x0D;&#x0A;q&#x0D;&#x0A;int g0/0/1.3&#x0D;&#x0A;dot1q termination vid 3&#x0D;&#x0A;ip add 192.168.3.254 24&#x0D;&#x0A;arp broadcast enable&#x0D;&#x0A;q&#x0D;&#x0A;----------&#x0D;&#x0A;undo int g0/0/1.2&#x0D;&#x0A;undo int g0/0/1.3&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="150" top="526" right="260" bottom="605" content="配置检验&#x0D;&#x0A;dis port vlan&#x0D;&#x0A;dis ip int b&#x0D;&#x0A;dis ip rout&#x0D;&#x0A;dis this" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
     </txttips>
 </topo>

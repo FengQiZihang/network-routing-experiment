@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="F189C7CD-9DEC-4093-9E13-E99A67646F85" name="LSW2" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-AB-2C-B4" com_port="2001" bootmode="0" cx="155.280701" cy="176.142120" edit_left="182" edit_top="230">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="1DCDB004-5344-4de2-A849-82FAB8413828" name="LSW1" poe="0" model="S3700" settings="" system_mac="4C-1F-CC-FB-3C-AA" com_port="2000" bootmode="0" cx="157.353943" cy="352.896912" edit_left="184" edit_top="406">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="Ethernet" count="22" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="1DCDB004-5344-4de2-A849-82FAB8413828" destDeviceID="F189C7CD-9DEC-4093-9E13-E99A67646F85">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="1" srcBoundRect_X="183.509308" srcBoundRect_Y="335.819031" srcOffset_X="-34.000000" srcOffset_Y="-4.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="182.490692" tarBoundRect_Y="246.180984" tarOffset_X="-32.000000" tarOffset_Y="12.000000" />
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="191.509308" srcBoundRect_Y="327.819031" srcOffset_X="8.000000" srcOffset_Y="-8.000000" tarIndex="1" tarBoundRectIsMoved="1" tarBoundRect_X="190.490692" tarBoundRect_Y="238.180984" tarOffset_X="35.000000" tarOffset_Y="9.000000" />
+            <interfacePair lineName="Copper" srcIndex="2" srcBoundRectIsMoved="1" srcBoundRect_X="175.509308" srcBoundRect_Y="343.819031" srcOffset_X="-77.000000" srcOffset_Y="4.000000" tarIndex="2" tarBoundRectIsMoved="1" tarBoundRect_X="174.490692" tarBoundRect_Y="254.180984" tarOffset_X="-79.000000" tarOffset_Y="23.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="107" top="44" right="303" bottom="68" content="以太网链路聚合实验" fontname="Consolas" fontstyle="0" editsize="140" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="337" top="5" right="590" bottom="631" content="sys&#x0D;&#x0A;undo info en&#x0D;&#x0A;sys SW1&#x0D;&#x0A;int eth-trunk 1&#x0D;&#x0A;mode manual load-balance&#x0D;&#x0A;trunkport eth 0/0/1 to 0/0/3&#x0D;&#x0A;q&#x0D;&#x0A;&#x0D;&#x0A;int eth-trunk 1&#x0D;&#x0A;undo trunkport eth 0/0/1 to 0/0/3&#x0D;&#x0A;mode lacp&#x0D;&#x0A;trunkport eth 0/0/1 to 0/0/3&#x0D;&#x0A;q&#x0D;&#x0A;&#x0D;&#x0A;lacp priority 1&#x0D;&#x0A;int e0/0/1&#x0D;&#x0A;lacp priority 1&#x0D;&#x0A;int e0/0/2&#x0D;&#x0A;lacp priority 1&#x0D;&#x0A;q&#x0D;&#x0A;&#x0D;&#x0A;int eth-trunk 1&#x0D;&#x0A;max act 2&#x0D;&#x0A;least act 2&#x0D;&#x0A;lacp preempt en&#x0D;&#x0A;q&#x0D;&#x0A;&#x0D;&#x0A;dis eth-trunk 1&#x0D;&#x0A;int e0/0/1&#x0D;&#x0A;shutdown&#x0D;&#x0A;q&#x0D;&#x0A;dis eth-trunk 1&#x0D;&#x0A;int e0/0/2&#x0D;&#x0A;shutdown&#x0D;&#x0A;q&#x0D;&#x0A;dis eth-trunk 1&#x0D;&#x0A;&#x0D;&#x0A;开启所有接口&#x0D;&#x0A;dis eth-trunk 1&#x0D;&#x0A;" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>
