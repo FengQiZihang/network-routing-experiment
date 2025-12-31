@@ -1,0 +1,114 @@
+/----- No.1 配置路由器的物理接口的IP地址 ----/
+--R1--
+system-view
+ undo info-center enable
+ sysname R1
+ interface GigabitEthernet 0/0/0
+  ip address 10.0.13.1 24
+ quit
+ interface GigabitEthernet 0/0/1
+  ip address 10.0.12.1 24
+ quit
+ interface LoopBack 0
+  ip address 10.0.1.1 32
+ quit
+
+--R2--
+system-view
+ undo info-center enable
+ sysname R2
+ interface GigabitEthernet 0/0/0
+  ip address 10.0.12.2 24
+ quit
+ interface GigabitEthernet 0/0/1
+  ip address 10.0.23.2 24
+ quit
+ interface LoopBack 0
+  ip address 10.0.2.2 32
+ quit
+
+--R3--
+system-view
+ undo info-center enable
+ sysname R3
+ interface GigabitEthernet 0/0/0
+  ip address 10.0.23.3 24
+ quit
+ interface GigabitEthernet 0/0/1
+  ip address 10.0.13.3 24
+ quit
+ interface LoopBack 0
+  ip address 10.0.3.3 32
+ quit
+
+/----- No.2 配置 OSPF 基本功能 ----/
+--R1--
+ospf 1 router-id 10.0.1.1
+ area 0.0.0.0
+  network 10.0.1.1 0.0.0.0
+  network 10.0.12.1 0.0.0.0
+  network 10.0.13.1 0.0.0.0
+ quit
+quit
+
+--R2--
+ospf 1 router-id 10.0.2.2
+ area 0.0.0.0
+  network 10.0.2.2 0.0.0.0
+  network 10.0.12.2 0.0.0.0
+  network 10.0.23.2 0.0.0.0
+ quit
+quit
+
+--R3--
+ospf 1 router-id 10.0.3.3
+ area 0.0.0.0
+  network 10.0.3.3 0.0.0.0
+  network 10.0.13.3 0.0.0.0
+  network 10.0.23.3 0.0.0.0
+ quit
+quit
+
+/----- No.3 查看 OSPF 邻居状态 ----/
+dis ospf peer brief
+dis ip routing-table protocol ospf
+
+
+/----- No.4 配置 OSPF 认证 ----/
+--R1--
+ospf 1
+ area 0
+  authentication-mode md5 1 cipher huawei123
+ quit
+quit
+
+--R2--
+ospf 1
+ area 0
+  authentication-mode md5 1 cipher huawei123
+ quit
+quit
+
+--R3--
+ospf 1
+ area 0
+  authentication-mode md5 1 cipher huawei123
+ quit
+quit
+
+/----- No.5 配置 OSPF 缺省路由发布 ----/
+--R1--
+ospf 1
+ default-route-advertise always
+quit
+
+/----- No.6 修改 OSPF Cost 影响路径选择 ----/
+--R1--
+int g0/0/1
+ ospf cost 10
+quit
+
+/----- No.7 验证路径 ----/
+# 在 R1 上查看去往 R2 Loopback 0 的路由和路径
+display ip routing-table 10.0.2.2
+tracert -a 10.0.1.1 10.0.2.2
