@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UNICODE" ?>
+<topo version="1.3.00.100">
+    <devices>
+        <dev id="36EF6E41-17FF-4630-BFCB-6F1A55239921" name="AR1" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-1A-3B-23" com_port="2000" bootmode="0" cx="52.000000" cy="263.000000" edit_left="79" edit_top="317">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="42449416-6DAA-4ca5-BE9B-5800FB061211" name="AR2" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-69-1F-77" com_port="2001" bootmode="0" cx="147.000000" cy="143.000000" edit_left="174" edit_top="197">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+        <dev id="5BEE0D5D-1EF1-4f74-ADDA-22D60303DAB7" name="AR3" poe="0" model="AR2220" settings="" system_mac="00-E0-FC-F4-57-9D" com_port="2002" bootmode="0" cx="234.000000" cy="262.000000" edit_left="261" edit_top="316">
+            <slot number="slot17" isMainBoard="1">
+                <interface sztype="Ethernet" interfacename="GE" count="1" />
+                <interface sztype="Ethernet" interfacename="GE" count="2" />
+            </slot>
+        </dev>
+    </devices>
+    <lines>
+        <line srcDeviceID="36EF6E41-17FF-4630-BFCB-6F1A55239921" destDeviceID="42449416-6DAA-4ca5-BE9B-5800FB061211">
+            <interfacePair lineName="Copper" srcIndex="0" srcBoundRectIsMoved="0" srcBoundRect_X="105.804291" srcBoundRect_Y="256.141937" srcOffset_X="0.000000" srcOffset_Y="0.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="147.195709" tarBoundRect_Y="203.858047" tarOffset_X="-56.000000" tarOffset_Y="-1.000000" />
+        </line>
+        <line srcDeviceID="42449416-6DAA-4ca5-BE9B-5800FB061211" destDeviceID="5BEE0D5D-1EF1-4f74-ADDA-22D60303DAB7">
+            <interfacePair lineName="Copper" srcIndex="1" srcBoundRectIsMoved="1" srcBoundRect_X="199.486481" srcBoundRect_Y="204.860825" srcOffset_X="18.000000" srcOffset_Y="-4.000000" tarIndex="0" tarBoundRectIsMoved="1" tarBoundRect_X="235.513519" tarBoundRect_Y="254.139175" tarOffset_X="13.000000" tarOffset_Y="-5.000000" />
+        </line>
+    </lines>
+    <shapes />
+    <txttips>
+        <txttip left="79" top="46" right="296" bottom="70" content="访问控制列表配置实验" fontname="Consolas" fontstyle="0" editsize="140" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="54" top="343" right="103" bottom="360" content="客户端" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+        <txttip left="232" top="346" right="327" bottom="363" content="Talnet服务器" fontname="Consolas" fontstyle="0" editsize="100" txtcolor="-16777216" txtbkcolor="-7278960" charset="1" />
+    </txttips>
+</topo>
